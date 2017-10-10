@@ -1,15 +1,16 @@
 package kickerbreaker;
 
 /**
- * Created by karina on 08-10-2017.
+ * Created by karina on 01-10-2017.
  */
 import kickerbreaker.controller.Controller;
 import kickerbreaker.view.Window;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
+import javax.sound.sampled.*;
 
-public class Breakout extends JFrame {
+public class KickerBreaker extends JFrame {
 
 
 

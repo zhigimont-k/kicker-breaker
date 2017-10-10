@@ -1,5 +1,6 @@
 package kickerbreaker.controller;
 
+import kickerbreaker.model.Const;
 import kickerbreaker.model.Model;
 import kickerbreaker.view.Ball;
 import kickerbreaker.view.Board;
@@ -15,7 +16,7 @@ import java.util.TimerTask;
 import static kickerbreaker.model.Const.*;
 
 /**
- * Created by karina on 10-10-2017.
+ * Created by karina on 04-10-2017.
  */
 public class Controller {
     public Board board;
@@ -26,10 +27,10 @@ public class Controller {
     public Controller() {
         this.board = new Board();
         this.model = new Model();
+        model.generateEnemies();
+        addEnemiesOnBoard();
         board.addKeyListener(new TAdapter());
         board.setFocusable(true);
-
-        board.enemies = new Enemy[N_OF_BRICKS];
         board.setDoubleBuffered(true);
         timer = new Timer();
         timer.scheduleAtFixedRate(new ScheduleTask(), DELAY, PERIOD);
@@ -44,26 +45,48 @@ public class Controller {
     private void checkCollision() {
 
         if ((board.playerGate.getRect()).intersects(board.ball.getRect())) {
+            board.score += model.getScore()+"";
             stopGame();
         }
 
-        if ((board.enemyGate.getRect()).intersects(board.ball.getRect())) {
-            model.goalIncrement();
+        if ((board.enemyGate.getRect()).intersects(board.ball.getRect()) && !board.enemyGate.isHit) {
+                model.goalIncrement();
+            board.enemyGate.isHit = true;
+
         }
 
-        for (int i = 0, j = 0; i < N_OF_BRICKS; i++) {
+        for (int i = 0, j = 0; i < board.enemies.size(); i++) {
 
-            if (board.enemies[i].isDestroyed()) {
+            if (board.enemies.get(i).isDestroyed()) {
                 j++;
             }
 
-            if (j == N_OF_BRICKS) {
-                board.message = "Victory";
-                stopGame();
+            if (j == board.enemies.size()) {
+
+                if (model.getCurrentLevel() == Const.LEVELS){
+                    board.message = "Victory";
+                    board.score += model.getScore()+"";
+                    stopGame();
+                }
+                try
+                {
+                    Thread.sleep(1000);
+                }
+                catch(InterruptedException ex)
+                {
+                    Thread.currentThread().interrupt();
+                }
+                model.clearEnemyList();
+                model.levelUp();
+                model.generateEnemies();
+                board.clearEnemyList();
+                addEnemiesOnBoard();
             }
         }
 
         if ((board.ball.getRect()).intersects(board.player.getRect())) {
+
+            board.enemyGate.isHit = false;
 
             int playerLPos = (int) board.player.getRect().getMinX();
             int ballLPos = (int) board.ball.getRect().getMinX();
@@ -99,9 +122,9 @@ public class Controller {
             }
         }
 
-        for (int i = 0; i < N_OF_BRICKS; i++) {
+        for (int i = 0; i < board.enemies.size(); i++) {
 
-            if ((board.ball.getRect()).intersects(board.enemies[i].getRect())) {
+            if ((board.ball.getRect()).intersects(board.enemies.get(i).getRect())) {
 
                 int ballLeft = (int) board.ball.getRect().getMinX();
                 int ballHeight = (int) board.ball.getRect().getHeight();
@@ -113,20 +136,21 @@ public class Controller {
                 Point pointTop = new Point(ballLeft, ballTop - 1);
                 Point pointBottom = new Point(ballLeft, ballTop + ballHeight + 1);
 
-                if (!board.enemies[i].isDestroyed()) {
-                    if (board.enemies[i].getRect().contains(pointRight)) {
+                if (!board.enemies.get(i).isDestroyed()) {
+                    if (board.enemies.get(i).getRect().contains(pointRight)) {
                         board.ball.setXDir(-1);
-                    } else if (board.enemies[i].getRect().contains(pointLeft)) {
+                    } else if (board.enemies.get(i).getRect().contains(pointLeft)) {
                         board.ball.setXDir(1);
                     }
 
-                    if (board.enemies[i].getRect().contains(pointTop)) {
+                    if (board.enemies.get(i).getRect().contains(pointTop)) {
                         board.ball.setYDir(1);
-                    } else if (board.enemies[i].getRect().contains(pointBottom)) {
+                    } else if (board.enemies.get(i).getRect().contains(pointBottom)) {
                         board.ball.setYDir(-1);
                     }
 
-                    board.enemies[i].setDestroyed(true);
+                    board.enemies.get(i).setDestroyed(true);
+                    model.destructionIncrement();
                 }
             }
         }
@@ -157,5 +181,11 @@ public class Controller {
             board.repaint();
         }
 
+    }
+
+    public void addEnemiesOnBoard(){
+        for (int index = 0; index < model.enemies.size(); index++){
+            board.enemies.add(model.enemies.get(index));
+        }
     }
 }

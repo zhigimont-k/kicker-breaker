@@ -3,29 +3,25 @@ package kickerbreaker.view;
 import javax.swing.*;
 
 /**
- * Created by karina on 10-10-2017.
+ * Created by karina on 03-10-2017.
  */
 public class Gate extends Sprite {
-    private boolean destroyed;
-
-    public Gate() {
-
-        ImageIcon ii = new ImageIcon((getClass().getResource("img/gate.png")));
+    public Boolean isHit;
+    public Gate(int i) {
+        isHit = false;
+        ImageIcon ii;
+        switch(i){
+            case 0:
+                ii = new ImageIcon((getClass().getResource("img/player gate.png")));
+                break;
+            default:
+                ii = new ImageIcon((getClass().getResource("img/enemy gate.png")));
+                break;
+        }
         image = ii.getImage();
 
         i_width = image.getWidth(null);
         i_height = image.getHeight(null);
 
-        destroyed = false;
-    }
-
-    public boolean isDestroyed() {
-
-        return destroyed;
-    }
-
-    public void setDestroyed(boolean val) {
-
-        destroyed = val;
     }
 }

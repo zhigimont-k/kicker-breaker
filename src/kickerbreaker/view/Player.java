@@ -1,7 +1,7 @@
 package kickerbreaker.view;
 
 /**
- * Created by karina on 08-10-2017.
+ * Created by karina on 02-10-2017.
  */
 import kickerbreaker.model.Const;
 
@@ -14,7 +14,7 @@ public class Player extends Sprite implements Const {
 
     public Player() {
 
-        ImageIcon ii = new ImageIcon((getClass().getResource("img/brick.png")));
+        ImageIcon ii = new ImageIcon((getClass().getResource("img/player.png")));
         image = ii.getImage();
 
         i_width = image.getWidth(null);

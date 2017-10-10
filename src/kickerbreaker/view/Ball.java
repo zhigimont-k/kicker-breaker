@@ -1,7 +1,7 @@
 package kickerbreaker.view;
 
 /**
- * Created by karina on 08-10-2017.
+ * Created by karina on 02-10-2017.
  */
 import kickerbreaker.model.Const;
 

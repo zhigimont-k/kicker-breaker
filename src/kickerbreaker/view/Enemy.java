@@ -1,7 +1,7 @@
 package kickerbreaker.view;
 
 /**
- * Created by karina on 08-10-2017.
+ * Created by karina on 02-10-2017.
  */
 
 import javax.swing.ImageIcon;
@@ -15,7 +15,7 @@ public class Enemy extends Sprite {
         this.x = x;
         this.y = y;
 
-        ImageIcon ii = new ImageIcon((getClass().getResource("img/brick.png")));
+        ImageIcon ii = new ImageIcon((getClass().getResource("img/enemy.png")));
         image = ii.getImage();
 
         i_width = image.getWidth(null);
