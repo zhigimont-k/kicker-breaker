@@ -1,22 +1,24 @@
-package kickerbreaker;
+package kickerbreaker.view;
 
 /**
  * Created by karina on 08-10-2017.
  */
+import kickerbreaker.model.Const;
+
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 
-public class Paddle extends Sprite implements Commons {
+public class Player extends Sprite implements Const {
 
     private int dx;
 
-    public Paddle() {
+    public Player() {
 
-        ImageIcon ii = new ImageIcon((getClass().getResource("brick.png")));
+        ImageIcon ii = new ImageIcon((getClass().getResource("img/brick.png")));
         image = ii.getImage();
 
         i_width = image.getWidth(null);
-        i_heigth = image.getHeight(null);
+        i_height = image.getHeight(null);
 
         resetState();
     }
@@ -62,7 +64,7 @@ public class Paddle extends Sprite implements Commons {
 
     private void resetState() {
 
-        x = INIT_PADDLE_X;
-        y = INIT_PADDLE_Y;
+        x = INIT_PLAYER_X;
+        y = INIT_PLAYER_Y;
     }
 }

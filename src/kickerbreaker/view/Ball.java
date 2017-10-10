@@ -1,11 +1,13 @@
-package kickerbreaker;
+package kickerbreaker.view;
 
 /**
  * Created by karina on 08-10-2017.
  */
+import kickerbreaker.model.Const;
+
 import javax.swing.ImageIcon;
 
-public class Ball extends Sprite implements Commons {
+public class Ball extends Sprite implements Const {
 
     private int xdir;
     private int ydir;
@@ -15,11 +17,11 @@ public class Ball extends Sprite implements Commons {
         xdir = 1;
         ydir = -1;
 
-        ImageIcon ii = new ImageIcon((getClass().getResource("ball.png")));
+        ImageIcon ii = new ImageIcon((getClass().getResource("img/ball.png")));
         image = ii.getImage();
 
         i_width = image.getWidth(null);
-        i_heigth = image.getHeight(null);
+        i_height = image.getHeight(null);
 
         resetState();
     }
@@ -39,6 +41,10 @@ public class Ball extends Sprite implements Commons {
 
         if (y == 0) {
             setYDir(1);
+        }
+
+        if (y == HEIGHT - i_height) {
+            setYDir(-1);
         }
     }
 

@@ -1,4 +1,4 @@
-package kickerbreaker;
+package kickerbreaker.view;
 
 /**
  * Created by karina on 08-10-2017.
@@ -11,7 +11,7 @@ public class Sprite {
     protected int x;
     protected int y;
     protected int i_width;
-    protected int i_heigth;
+    protected int i_height;
     protected Image image;
 
     public void setX(int x) {
@@ -35,14 +35,14 @@ public class Sprite {
     }
 
     public int getHeight() {
-        return i_heigth;
+        return i_height;
     }
 
-    Image getImage() {
+    public Image getImage() {
         return image;
     }
 
-    Rectangle getRect() {
+    public Rectangle getRect() {
         return new Rectangle(x, y,
                 image.getWidth(null), image.getHeight(null));
     }
