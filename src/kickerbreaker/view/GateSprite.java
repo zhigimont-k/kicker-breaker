@@ -5,9 +5,9 @@ import javax.swing.*;
 /**
  * Created by karina on 03-10-2017.
  */
-public class Gate extends Sprite {
+public class GateSprite extends Sprite {
     public Boolean isHit;
-    public Gate(int i) {
+    public GateSprite(int i) {
         isHit = false;
         ImageIcon ii;
         switch(i){

@@ -3,33 +3,27 @@ package kickerbreaker.view;
 /**
  * Created by karina on 03-10-2017.
  */
+
 import kickerbreaker.model.Const;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.RenderingHints;
-import java.awt.Toolkit;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 
 public class Board extends JPanel implements Const {
 
     public String score = "Score: ";
     public String message = "Game Over";
-    public Ball ball;
-    public Player player;
-    public Gate enemyGate;
-    public Gate playerGate;
+    public BallSprite ball;
+    public JLabel scoreLabel;
+    public JLabel level;
+    public JLabel goals;
+    public PlayerSprite player;
+    public GateSprite enemyGate;
+    public GateSprite playerGate;
     public boolean ingame = true;
-    public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    public boolean levelStart = false;
+    public ArrayList<EnemySprite> enemies = new ArrayList<EnemySprite>();
     private Background background;
 
     public Board() {
@@ -46,13 +40,19 @@ public class Board extends JPanel implements Const {
 
     private void gameInit() {
         background = new Background();
-        playerGate = new Gate(0);
-        enemyGate = new Gate(1);
-        player = new Player();
-        ball = new Ball();
+        playerGate = new GateSprite(0);
+        enemyGate = new GateSprite(1);
+        player = new PlayerSprite();
+        ball = new BallSprite();
+        scoreLabel = new JLabel("Score: 0");
+        level = new JLabel("Level 1");
+        goals = new JLabel("Goals: 0");
+        add(scoreLabel);
+        add(level);
+        add(goals);
 
         playerGate.setX(Const.WIDTH / 2 - playerGate.getWidth() / 2);
-        playerGate.setY(BOTTOM_EDGE);
+        playerGate.setY((int)(Const.HEIGHT - playerGate.getHeight() * 1.5));
 
         enemyGate.setX(Const.WIDTH / 2 - playerGate.getWidth() / 2);
 
@@ -71,7 +71,6 @@ public class Board extends JPanel implements Const {
                 RenderingHints.VALUE_RENDER_QUALITY);
 
         if (ingame) {
-
             drawObjects(g2d);
         } else {
 
@@ -89,7 +88,7 @@ public class Board extends JPanel implements Const {
         g2d.drawImage(player.getImage(), player.getX(), player.getY(),
                 player.getWidth(), player.getHeight(), this);
         g2d.drawImage(playerGate.getImage(), Const.WIDTH / 2 - playerGate.getWidth() / 2,
-                BOTTOM_EDGE,
+                (int)(Const.HEIGHT - playerGate.getHeight() * 1.5),
                 playerGate.getWidth(), playerGate.getHeight(), this);
         g2d.drawImage(enemyGate.getImage(), Const.WIDTH / 2 - enemyGate.getWidth() / 2,
                 0,
@@ -118,6 +117,7 @@ public class Board extends JPanel implements Const {
                 (Const.WIDTH - metr.stringWidth(message)) / 2,
                 Const.WIDTH / 2 + 20);
     }
+
 
     public void clearEnemyList(){
         for (int index = enemies.size() - 1; index <= 0; index--){

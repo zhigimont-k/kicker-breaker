@@ -5,14 +5,14 @@ package kickerbreaker.view;
  */
 import kickerbreaker.model.Const;
 
+import javax.swing.*;
 import java.awt.event.KeyEvent;
-import javax.swing.ImageIcon;
 
-public class Player extends Sprite implements Const {
+public class PlayerSprite extends Sprite implements Const {
 
     private int dx;
 
-    public Player() {
+    public PlayerSprite() {
 
         ImageIcon ii = new ImageIcon((getClass().getResource("img/player.png")));
         image = ii.getImage();
@@ -31,8 +31,8 @@ public class Player extends Sprite implements Const {
             x = 0;
         }
 
-        if (x >= WIDTH - i_width) {
-            x = WIDTH - i_width;
+        if (x >= Const.WIDTH - 1.5 * Const.SPRITE_WIDTH) {
+            x = (int) (Const.WIDTH - 1.5 * Const.SPRITE_WIDTH);
         }
     }
 
@@ -62,7 +62,7 @@ public class Player extends Sprite implements Const {
         }
     }
 
-    private void resetState() {
+    public void resetState() {
 
         x = INIT_PLAYER_X;
         y = INIT_PLAYER_Y;

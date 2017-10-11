@@ -2,10 +2,8 @@ package kickerbreaker.controller;
 
 import kickerbreaker.model.Const;
 import kickerbreaker.model.Model;
-import kickerbreaker.view.Ball;
 import kickerbreaker.view.Board;
-import kickerbreaker.view.Enemy;
-import kickerbreaker.view.Player;
+import kickerbreaker.view.Window;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -13,7 +11,8 @@ import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static kickerbreaker.model.Const.*;
+import static kickerbreaker.model.Const.DELAY;
+import static kickerbreaker.model.Const.PERIOD;
 
 /**
  * Created by karina on 04-10-2017.
@@ -21,19 +20,23 @@ import static kickerbreaker.model.Const.*;
 public class Controller {
     public Board board;
     private Model model;
+    private Window window;
 
     private Timer timer;
 
     public Controller() {
+        this.window = new Window();
         this.board = new Board();
+        window.add(board);
         this.model = new Model();
         model.generateEnemies();
+        board.level.setText("Level "+model.getCurrentLevel());
         addEnemiesOnBoard();
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new ScheduleTask(), DELAY, PERIOD);
         board.addKeyListener(new TAdapter());
         board.setFocusable(true);
         board.setDoubleBuffered(true);
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new ScheduleTask(), DELAY, PERIOD);
     }
 
     private void stopGame() {
@@ -46,12 +49,24 @@ public class Controller {
 
         if ((board.playerGate.getRect()).intersects(board.ball.getRect())) {
             board.score += model.getScore()+"";
+            board.scoreLabel.setVisible(false);
+            board.level.setVisible(false);
+            board.goals.setVisible(false);
             stopGame();
         }
 
         if ((board.enemyGate.getRect()).intersects(board.ball.getRect()) && !board.enemyGate.isHit) {
-                model.goalIncrement();
+
+            model.addGoal();
             board.enemyGate.isHit = true;
+            board.goals.setText("Goals: "+model.getGoals());
+            board.scoreLabel.setText("Score: "+model.getScore());
+
+        }
+
+        if (!((board.enemyGate.getRect()).intersects(board.ball.getRect()))) {
+
+            board.enemyGate.isHit = false;
 
         }
 
@@ -68,25 +83,22 @@ public class Controller {
                     board.score += model.getScore()+"";
                     stopGame();
                 }
-                try
-                {
-                    Thread.sleep(1000);
-                }
-                catch(InterruptedException ex)
-                {
-                    Thread.currentThread().interrupt();
-                }
+
                 model.clearEnemyList();
                 model.levelUp();
+                board.level.setText("Level "+model.getCurrentLevel());
+
                 model.generateEnemies();
                 board.clearEnemyList();
                 addEnemiesOnBoard();
+                model.nullifyGoals();
+                board.goals.setText("Goals: "+model.getGoals());
+                board.player.resetState();
+                board.ball.resetState();
             }
         }
 
         if ((board.ball.getRect()).intersects(board.player.getRect())) {
-
-            board.enemyGate.isHit = false;
 
             int playerLPos = (int) board.player.getRect().getMinX();
             int ballLPos = (int) board.ball.getRect().getMinX();
@@ -150,7 +162,8 @@ public class Controller {
                     }
 
                     board.enemies.get(i).setDestroyed(true);
-                    model.destructionIncrement();
+                    model.destructionScoreIncrement();
+                    board.scoreLabel.setText("Score: "+model.getScore());
                 }
             }
         }
@@ -175,8 +188,8 @@ public class Controller {
         @Override
         public void run() {
 
-            board.ball.move();
             board.player.move();
+            board.ball.move();
             checkCollision();
             board.repaint();
         }

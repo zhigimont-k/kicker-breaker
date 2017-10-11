@@ -1,10 +1,8 @@
 package kickerbreaker.model;
 
-import kickerbreaker.view.Enemy;
+import kickerbreaker.view.EnemySprite;
 
 import java.util.ArrayList;
-
-import static kickerbreaker.model.Const.*;
 
 /**
  * Created by karina on 01-10-2017.
@@ -14,12 +12,23 @@ public class Model {
     private int score;
     private int goals;
     private int currentLevel;
-    public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    public ArrayList<EnemySprite> enemies = new ArrayList<EnemySprite>();
 
 
     public void levelUp(){
         currentLevel++;
     }
+
+    public void addGoal(){
+        goals++;
+        goalScoreIncrement();
+    }
+
+    public void nullifyGoals(){
+        goals = 0;
+    }
+
+    public int getGoals(){return goals;}
 
     public Model(){
         score = 0;
@@ -37,7 +46,7 @@ public class Model {
             case 1:
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 6; j++) {
-                        enemies.add(new Enemy(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
+                        enemies.add(new EnemySprite(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
                         k++;
                     }
                 }
@@ -45,7 +54,15 @@ public class Model {
             case 2:
                 for (int i = 0; i < 6; i++) {
                     for (int j = 0; j < 6; j++) {
-                        enemies.add(new Enemy(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
+                        enemies.add(new EnemySprite(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
+                        k++;
+                    }
+                }
+                break;
+            case 3:
+                for (int i = 0; i < 7; i++) {
+                    for (int j = 0; j < 5; j++) {
+                        enemies.add(new EnemySprite(j * 40 + 40, i * 30 + Const.SPRITE_HEIGHT * 3));
                         k++;
                     }
                 }
@@ -53,7 +70,7 @@ public class Model {
             default:
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 6; j++) {
-                        enemies.add(new Enemy(j * 40 + 30, i * 10 + 50));
+                        enemies.add(new EnemySprite(j * 40 + 30, i * 10 + 50));
                         k++;
                     }
                 }
@@ -71,6 +88,9 @@ public class Model {
             case 2:
                 number = 36;
                 break;
+            case 3:
+                number = 35;
+                break;
             default:
                 number = 30;
                 break;
@@ -83,11 +103,11 @@ public class Model {
         return score;
     }
 
-    public void destructionIncrement(){
+    public void destructionScoreIncrement(){
         score+=5;
     }
 
-    public void goalIncrement(){
+    public void goalScoreIncrement(){
         score+=10;
     }
 

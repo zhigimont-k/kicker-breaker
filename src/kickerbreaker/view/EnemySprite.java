@@ -6,11 +6,11 @@ package kickerbreaker.view;
 
 import javax.swing.ImageIcon;
 
-public class Enemy extends Sprite {
+public class EnemySprite extends Sprite {
 
     private boolean destroyed;
 
-    public Enemy(int x, int y) {
+    public EnemySprite(int x, int y) {
 
         this.x = x;
         this.y = y;
@@ -29,8 +29,8 @@ public class Enemy extends Sprite {
         return destroyed;
     }
 
-    public void setDestroyed(boolean val) {
+    public void setDestroyed(boolean value) {
 
-        destroyed = val;
+        destroyed = value;
     }
 }
