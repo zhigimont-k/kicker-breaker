@@ -31,8 +31,8 @@ public class PlayerSprite extends Sprite implements Const {
             x = 0;
         }
 
-        if (x >= Const.WIDTH - 1.5 * Const.SPRITE_WIDTH) {
-            x = (int) (Const.WIDTH - 1.5 * Const.SPRITE_WIDTH);
+        if (x >= Const.WIDTH - Const.SPRITE_WIDTH) {
+            x = (int) (Const.WIDTH - Const.SPRITE_WIDTH);
         }
     }
 

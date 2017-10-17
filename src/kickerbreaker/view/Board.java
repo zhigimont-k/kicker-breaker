@@ -44,15 +44,15 @@ public class Board extends JPanel implements Const {
         enemyGate = new GateSprite(1);
         player = new PlayerSprite();
         ball = new BallSprite();
-        scoreLabel = new JLabel("Score: 0");
-        level = new JLabel("Level 1");
-        goals = new JLabel("Goals: 0");
+        scoreLabel = new JLabel("");
+        level = new JLabel("");
+        goals = new JLabel("");
         add(scoreLabel);
         add(level);
         add(goals);
 
         playerGate.setX(Const.WIDTH / 2 - playerGate.getWidth() / 2);
-        playerGate.setY((int)(Const.HEIGHT - playerGate.getHeight() * 1.5));
+        playerGate.setY(Const.HEIGHT - playerGate.getHeight());
 
         enemyGate.setX(Const.WIDTH / 2 - playerGate.getWidth() / 2);
 
@@ -88,7 +88,7 @@ public class Board extends JPanel implements Const {
         g2d.drawImage(player.getImage(), player.getX(), player.getY(),
                 player.getWidth(), player.getHeight(), this);
         g2d.drawImage(playerGate.getImage(), Const.WIDTH / 2 - playerGate.getWidth() / 2,
-                (int)(Const.HEIGHT - playerGate.getHeight() * 1.5),
+                Const.HEIGHT - playerGate.getHeight(),
                 playerGate.getWidth(), playerGate.getHeight(), this);
         g2d.drawImage(enemyGate.getImage(), Const.WIDTH / 2 - enemyGate.getWidth() / 2,
                 0,

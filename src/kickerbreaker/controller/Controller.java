@@ -12,6 +12,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import static kickerbreaker.model.Const.DELAY;
+import static kickerbreaker.model.Const.MAX_GOALS;
 import static kickerbreaker.model.Const.PERIOD;
 
 /**
@@ -28,10 +29,15 @@ public class Controller {
         this.window = new Window();
         this.board = new Board();
         window.add(board);
+        board.setPreferredSize(new Dimension(Const.WIDTH, Const.HEIGHT));
+        window.setContentPane(board);
+        window.pack();
+        window.setResizable(false);
+        window.setLocationRelativeTo(null);
         this.model = new Model();
         model.generateEnemies();
-        board.level.setText("Level "+model.getCurrentLevel());
         addEnemiesOnBoard();
+        updateStat();
         timer = new Timer();
         timer.scheduleAtFixedRate(new ScheduleTask(), DELAY, PERIOD);
         board.addKeyListener(new TAdapter());
@@ -47,20 +53,31 @@ public class Controller {
 
     private void checkCollision() {
 
-        if ((board.playerGate.getRect()).intersects(board.ball.getRect())) {
-            board.score += model.getScore()+"";
+        if (model.getEnemyGoals() == MAX_GOALS) {
             board.scoreLabel.setVisible(false);
             board.level.setVisible(false);
             board.goals.setVisible(false);
             stopGame();
         }
 
+        if ((board.playerGate.getRect()).intersects(board.ball.getRect()) && !board.playerGate.isHit) {
+            model.addEnemyGoal();
+            board.playerGate.isHit = true;
+            updateStat();
+        }
+
+        if (!((board.playerGate.getRect()).intersects(board.ball.getRect()))) {
+
+            board.playerGate.isHit = false;
+
+        }
+
+
         if ((board.enemyGate.getRect()).intersects(board.ball.getRect()) && !board.enemyGate.isHit) {
 
-            model.addGoal();
+            model.addPlayerGoal();
             board.enemyGate.isHit = true;
-            board.goals.setText("Goals: "+model.getGoals());
-            board.scoreLabel.setText("Score: "+model.getScore());
+            updateStat();
 
         }
 
@@ -76,23 +93,22 @@ public class Controller {
                 j++;
             }
 
-            if (j == board.enemies.size()) {
+            if (j == board.enemies.size() || model.getPlayerGoals() == MAX_GOALS) {
 
                 if (model.getCurrentLevel() == Const.LEVELS){
                     board.message = "Victory";
-                    board.score += model.getScore()+"";
+                    updateStat();
                     stopGame();
                 }
 
                 model.clearEnemyList();
                 model.levelUp();
-                board.level.setText("Level "+model.getCurrentLevel());
 
                 model.generateEnemies();
                 board.clearEnemyList();
                 addEnemiesOnBoard();
                 model.nullifyGoals();
-                board.goals.setText("Goals: "+model.getGoals());
+                updateStat();
                 board.player.resetState();
                 board.ball.resetState();
             }
@@ -163,7 +179,7 @@ public class Controller {
 
                     board.enemies.get(i).setDestroyed(true);
                     model.destructionScoreIncrement();
-                    board.scoreLabel.setText("Score: "+model.getScore());
+                    updateStat();
                 }
             }
         }
@@ -200,5 +216,11 @@ public class Controller {
         for (int index = 0; index < model.enemies.size(); index++){
             board.enemies.add(model.enemies.get(index));
         }
+    }
+
+    public void updateStat(){
+        board.level.setText("Level "+model.getCurrentLevel());
+        board.goals.setText(model.getPlayerGoals()+" : "+model.getEnemyGoals());
+        board.scoreLabel.setText("Score: "+model.getScore());
     }
 }

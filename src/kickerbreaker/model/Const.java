@@ -7,9 +7,8 @@ public interface Const {
     int LEVELS = 3;
     int WIDTH = 300;
     int HEIGHT = 500;
-    int BOTTOM_EDGE = 420;
     int INIT_PLAYER_X = 200;
-    int INIT_PLAYER_Y = 400;
+    int INIT_PLAYER_Y = 420;
     int INIT_BALL_X = 230;
     int INIT_BALL_Y = 355;
     int DELAY = 1000;
@@ -18,4 +17,5 @@ public interface Const {
     int SPRITE_HEIGHT = 18;
     int BALL_WIDTH = 20;
     int BALL_HEIGHT = 21;
+    int MAX_GOALS = 12;
 }

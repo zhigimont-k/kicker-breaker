@@ -10,7 +10,8 @@ import java.util.ArrayList;
 public class Model {
 
     private int score;
-    private int goals;
+    private int playerGoals;
+    private int enemyGoals;
     private int currentLevel;
     public ArrayList<EnemySprite> enemies = new ArrayList<EnemySprite>();
 
@@ -19,20 +20,28 @@ public class Model {
         currentLevel++;
     }
 
-    public void addGoal(){
-        goals++;
+    public void addPlayerGoal(){
+        playerGoals++;
         goalScoreIncrement();
     }
 
     public void nullifyGoals(){
-        goals = 0;
+        enemyGoals = 0;
+        playerGoals = 0;
     }
 
-    public int getGoals(){return goals;}
+    public void addEnemyGoal(){
+        enemyGoals++;
+    }
+
+    public int getEnemyGoals(){return enemyGoals;}
+
+    public int getPlayerGoals(){return playerGoals;}
 
     public Model(){
         score = 0;
-        goals = 0;
+        enemyGoals = 0;
+        playerGoals = 0;
         currentLevel = 1;
     }
 
