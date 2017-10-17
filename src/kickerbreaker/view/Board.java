@@ -18,11 +18,11 @@ public class Board extends JPanel implements Const {
     public JLabel scoreLabel;
     public JLabel level;
     public JLabel goals;
+    public JLabel combo;
     public PlayerSprite player;
     public GateSprite enemyGate;
     public GateSprite playerGate;
     public boolean ingame = true;
-    public boolean levelStart = false;
     public ArrayList<EnemySprite> enemies = new ArrayList<EnemySprite>();
     private Background background;
 
@@ -44,9 +44,11 @@ public class Board extends JPanel implements Const {
         enemyGate = new GateSprite(1);
         player = new PlayerSprite();
         ball = new BallSprite();
+        combo = new JLabel("");
         scoreLabel = new JLabel("");
         level = new JLabel("");
         goals = new JLabel("");
+        add(combo);
         add(scoreLabel);
         add(level);
         add(goals);
@@ -95,7 +97,7 @@ public class Board extends JPanel implements Const {
                 enemyGate.getWidth(), enemyGate.getHeight(), this);
 
         for (int i = 0; i < enemies.size(); i++) {
-            if (!enemies.get(i).isDestroyed()) {
+            if (enemies.get(i).isVisible()) {
                 g2d.drawImage(enemies.get(i).getImage(), enemies.get(i).getX(),
                         enemies.get(i).getY(), enemies.get(i).getWidth(),
                         enemies.get(i).getHeight(), this);

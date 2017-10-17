@@ -1,7 +1,5 @@
 package kickerbreaker.model;
 
-import kickerbreaker.view.EnemySprite;
-
 import java.util.ArrayList;
 
 /**
@@ -13,7 +11,9 @@ public class Model {
     private int playerGoals;
     private int enemyGoals;
     private int currentLevel;
-    public ArrayList<EnemySprite> enemies = new ArrayList<EnemySprite>();
+    private int comboCounter;
+    private Player player;
+    public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 
 
     public void levelUp(){
@@ -30,6 +30,17 @@ public class Model {
         playerGoals = 0;
     }
 
+    public void breakCombo(){
+        comboCounter = 0;
+    }
+
+    public int getCombo(){
+        return comboCounter;
+    }
+
+    public void comboIncrement(){
+        comboCounter++;
+    }
     public void addEnemyGoal(){
         enemyGoals++;
     }
@@ -43,6 +54,7 @@ public class Model {
         enemyGoals = 0;
         playerGoals = 0;
         currentLevel = 1;
+        comboCounter = 0;
     }
 
     public int getCurrentLevel(){
@@ -50,37 +62,32 @@ public class Model {
     }
 
     public void generateEnemies(){
-        int k = 0;
         switch(currentLevel){
             case 1:
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 6; j++) {
-                        enemies.add(new EnemySprite(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
-                        k++;
+                        enemies.add(new Enemy(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
                     }
                 }
                 break;
             case 2:
                 for (int i = 0; i < 6; i++) {
                     for (int j = 0; j < 6; j++) {
-                        enemies.add(new EnemySprite(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
-                        k++;
+                        enemies.add(new Enemy(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
                     }
                 }
                 break;
             case 3:
                 for (int i = 0; i < 7; i++) {
                     for (int j = 0; j < 5; j++) {
-                        enemies.add(new EnemySprite(j * 40 + 40, i * 30 + Const.SPRITE_HEIGHT * 3));
-                        k++;
+                        enemies.add(new Enemy(j * 40 + 40, i * 30 + Const.SPRITE_HEIGHT * 3));
                     }
                 }
                 break;
             default:
                 for (int i = 0; i < 5; i++) {
                     for (int j = 0; j < 6; j++) {
-                        enemies.add(new EnemySprite(j * 40 + 30, i * 10 + 50));
-                        k++;
+                        enemies.add(new Enemy(j * 40 + 30, i * 10 + 50));
                     }
                 }
                 break;
@@ -113,7 +120,7 @@ public class Model {
     }
 
     public void destructionScoreIncrement(){
-        score+=5;
+        score+=5 * comboCounter;
     }
 
     public void goalScoreIncrement(){

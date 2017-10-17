@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 public class EnemySprite extends Sprite {
 
-    private boolean destroyed;
+    private boolean visible;
 
     public EnemySprite(int x, int y) {
 
@@ -21,16 +21,16 @@ public class EnemySprite extends Sprite {
         i_width = image.getWidth(null);
         i_height = image.getHeight(null);
 
-        destroyed = false;
+        visible = true;
     }
 
-    public boolean isDestroyed() {
+    public boolean isVisible() {
 
-        return destroyed;
+        return visible;
     }
 
-    public void setDestroyed(boolean value) {
+    public void setVisible(boolean value) {
 
-        destroyed = value;
+        visible = value;
     }
 }
