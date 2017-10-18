@@ -121,10 +121,9 @@ public class Board extends JPanel implements Const {
     }
 
 
-    public void clearEnemyList(){
+    public void clearEnemyList() {
         enemies.clear();
-        System.out.println("board.enemies.size() = "+enemies.size());
     }
 
 
-    }
+}

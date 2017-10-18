@@ -13,6 +13,7 @@ public class Model {
     private int currentLevel;
     private int comboCounter;
     public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    public ArrayList<Level> levels = new ArrayList<Level>();
     public Gate playerGate;
     public Gate enemyGate;
 
@@ -56,7 +57,7 @@ public class Model {
         score = 0;
         enemyGoals = 0;
         playerGoals = 0;
-        currentLevel = 1;
+        currentLevel = 0;
         comboCounter = 0;
     }
 
@@ -65,62 +66,16 @@ public class Model {
     }
 
     public void generateEnemies(){
-        switch(currentLevel){
-            case 1:
-                for (int i = 0; i < 5; i++) {
-                    for (int j = 0; j < 6; j++) {
-                        enemies.add(new Enemy(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
-                    }
-                }
-
-                System.out.println("model.enemies.size() = "+enemies.size());
-                break;
-            case 2:
-                for (int i = 0; i < 6; i++) {
-                    for (int j = 0; j < 6; j++) {
-                        enemies.add(new Enemy(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
-                    }
-                }
-
-                System.out.println("model.enemies.size() = "+enemies.size());
-                break;
-            case 3:
-                for (int i = 0; i < 7; i++) {
-                    for (int j = 0; j < 5; j++) {
-                        enemies.add(new Enemy(j * 40 + 40, i * 30 + Const.SPRITE_HEIGHT * 3));
-                    }
-                }
-                break;
-            default:
-                for (int i = 0; i < 5; i++) {
-                    for (int j = 0; j < 6; j++) {
-                        enemies.add(new Enemy(j * 40 + 30, i * 10 + 50));
-                    }
-                }
-                break;
+        int bound = levels.get(currentLevel).enemyList.size();
+        for (int index = 0; index < bound; index++){
+            Enemy addedEnemy = new Enemy(levels.get(currentLevel).enemyList.get(index).getX(),
+                    levels.get(currentLevel).enemyList.get(index).getY(),
+                    levels.get(currentLevel).enemyList.get(index).getHP());
+            enemies.add(addedEnemy);
         }
-
     }
 
-    public int getEnemyNumber(){
-        int number;
-        switch(currentLevel){
-            case 1:
-                number = 30;
-                break;
-            case 2:
-                number = 36;
-                break;
-            case 3:
-                number = 35;
-                break;
-            default:
-                number = 30;
-                break;
-
-        }
-        return number;
-    }
+    public int getNumberOfLevels(){return levels.size();}
 
     public int getScore(){
         return score;

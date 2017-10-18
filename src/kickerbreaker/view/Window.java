@@ -12,9 +12,6 @@ public class Window extends JFrame {
 
     private void initUI() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //setSize(Const.WIDTH, Const.HEIGHT);
-
-
         setTitle("KickerBreaker");
         setVisible(true);
     }

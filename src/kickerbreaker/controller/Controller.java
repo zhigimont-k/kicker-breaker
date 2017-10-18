@@ -28,6 +28,7 @@ public class Controller {
         this.model = new Model();
         this.window = new Window();
         this.board = new Board();
+        XMLReader reader = new XMLReader(model);
         window.add(board);
         board.setPreferredSize(new Dimension(Const.WIDTH, Const.HEIGHT));
         window.setContentPane(board);
@@ -57,7 +58,7 @@ public class Controller {
             board.scoreLabel.setVisible(false);
             board.level.setVisible(false);
             board.goals.setVisible(false);
-            board.score = "Score: "+model.getScore();
+            board.score = "Score: " + model.getScore();
             stopGame();
         }
 
@@ -68,11 +69,8 @@ public class Controller {
         }
 
         if (!((board.playerGate.getRect()).intersects(board.ball.getRect()))) {
-
             model.playerGate.isHit = false;
-
         }
-
 
         if ((board.enemyGate.getRect()).intersects(board.ball.getRect()) && !model.enemyGate.isHit) {
 
@@ -96,23 +94,27 @@ public class Controller {
 
             if (j == model.enemies.size() || model.getPlayerGoals() == MAX_GOALS) {
 
-                if (model.getCurrentLevel() == Const.LEVELS){
+                if (model.getCurrentLevel() < model.getNumberOfLevels() - 1) {
+                    model.clearEnemyList();
+                    board.clearEnemyList();
+                    model.nullifyGoals();
+                    model.breakCombo();
+                    model.levelUp();
+                    updateStat();
+
+                    model.generateEnemies();
+                    addEnemiesOnBoard();
+                    board.player.resetState();
+                    board.ball.resetState();
+                } else {
+
                     board.message = "Victory";
+                    board.score = "Score: " + model.getScore();
                     updateStat();
                     stopGame();
+
                 }
 
-                model.clearEnemyList();
-                board.clearEnemyList();
-                model.nullifyGoals();
-                model.breakCombo();
-                model.levelUp();
-                updateStat();
-
-                model.generateEnemies();
-                addEnemiesOnBoard();
-                board.player.resetState();
-                board.ball.resetState();
             }
         }
 
@@ -218,18 +220,17 @@ public class Controller {
 
     }
 
-    public void addEnemiesOnBoard(){
-        for (int index = 0; index < model.enemies.size(); index++){
+    public void addEnemiesOnBoard() {
+        for (int index = 0; index < model.enemies.size(); index++) {
             board.enemies.add(new EnemySprite(model.enemies.get(index).getX(), model.enemies.get(index).getY()));
         }
-        System.out.println("board.enemies.size() = "+board.enemies.size());
     }
 
-    public void updateStat(){
-        board.combo.setText("x"+model.getCombo());
-        board.level.setText("Level "+model.getCurrentLevel());
-        board.goals.setText(model.getPlayerGoals()+" : "+model.getEnemyGoals());
-        board.scoreLabel.setText("Score: "+model.getScore());
+    public void updateStat() {
+        board.combo.setText("x" + model.getCombo());
+        board.level.setText("Level " + model.getCurrentLevel());
+        board.goals.setText(model.getPlayerGoals() + " : " + model.getEnemyGoals());
+        board.scoreLabel.setText("Score: " + model.getScore());
     }
 
 
