@@ -12,8 +12,9 @@ public class Model {
     private int enemyGoals;
     private int currentLevel;
     private int comboCounter;
-    private Player player;
     public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+    public Gate playerGate;
+    public Gate enemyGate;
 
 
     public void levelUp(){
@@ -50,6 +51,8 @@ public class Model {
     public int getPlayerGoals(){return playerGoals;}
 
     public Model(){
+        playerGate = new Gate();
+        enemyGate = new Gate();
         score = 0;
         enemyGoals = 0;
         playerGoals = 0;
@@ -69,6 +72,8 @@ public class Model {
                         enemies.add(new Enemy(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
                     }
                 }
+
+                System.out.println("model.enemies.size() = "+enemies.size());
                 break;
             case 2:
                 for (int i = 0; i < 6; i++) {
@@ -76,6 +81,8 @@ public class Model {
                         enemies.add(new Enemy(j * 40 + 30, i * 30 + Const.SPRITE_HEIGHT * 3));
                     }
                 }
+
+                System.out.println("model.enemies.size() = "+enemies.size());
                 break;
             case 3:
                 for (int i = 0; i < 7; i++) {
@@ -128,9 +135,7 @@ public class Model {
     }
 
     public void clearEnemyList(){
-        for (int index = enemies.size() - 1; index <= 0; index--){
-            enemies.remove(index);
-        }
+        enemies.clear();
     }
 
 }

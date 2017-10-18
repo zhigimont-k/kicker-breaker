@@ -57,34 +57,34 @@ public class Controller {
             board.scoreLabel.setVisible(false);
             board.level.setVisible(false);
             board.goals.setVisible(false);
-            board.scoreLabel.setText("Score: "+model.getScore());
+            board.score = "Score: "+model.getScore();
             stopGame();
         }
 
-        if ((board.playerGate.getRect()).intersects(board.ball.getRect()) && !board.playerGate.isHit) {
+        if ((board.playerGate.getRect()).intersects(board.ball.getRect()) && !model.playerGate.isHit) {
             model.addEnemyGoal();
-            board.playerGate.isHit = true;
+            model.playerGate.isHit = true;
             updateStat();
         }
 
         if (!((board.playerGate.getRect()).intersects(board.ball.getRect()))) {
 
-            board.playerGate.isHit = false;
+            model.playerGate.isHit = false;
 
         }
 
 
-        if ((board.enemyGate.getRect()).intersects(board.ball.getRect()) && !board.enemyGate.isHit) {
+        if ((board.enemyGate.getRect()).intersects(board.ball.getRect()) && !model.enemyGate.isHit) {
 
             model.addPlayerGoal();
-            board.enemyGate.isHit = true;
+            model.enemyGate.isHit = true;
             updateStat();
 
         }
 
         if (!((board.enemyGate.getRect()).intersects(board.ball.getRect()))) {
 
-            board.enemyGate.isHit = false;
+            model.enemyGate.isHit = false;
 
         }
 
@@ -102,15 +102,15 @@ public class Controller {
                     stopGame();
                 }
 
-                board.clearEnemyList();
                 model.clearEnemyList();
+                board.clearEnemyList();
                 model.nullifyGoals();
                 model.breakCombo();
                 model.levelUp();
+                updateStat();
 
                 model.generateEnemies();
                 addEnemiesOnBoard();
-                updateStat();
                 board.player.resetState();
                 board.ball.resetState();
             }
@@ -222,6 +222,7 @@ public class Controller {
         for (int index = 0; index < model.enemies.size(); index++){
             board.enemies.add(new EnemySprite(model.enemies.get(index).getX(), model.enemies.get(index).getY()));
         }
+        System.out.println("board.enemies.size() = "+board.enemies.size());
     }
 
     public void updateStat(){

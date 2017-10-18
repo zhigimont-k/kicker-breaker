@@ -14,18 +14,22 @@ public class BallSprite extends Sprite implements Const {
 
     public BallSprite() {
 
-
+        xdir = 1;
+        ydir = -1;
 
         ImageIcon ii = new ImageIcon((getClass().getResource("img/ball.png")));
         image = ii.getImage();
 
         i_width = image.getWidth(null);
         i_height = image.getHeight(null);
-        xdir = 1;
-        ydir = -1;
 
         resetState();
     }
+
+    public int getX(){return x;}
+
+    public int getY(){return y;}
+
 
     public void move() {
 
@@ -66,4 +70,5 @@ public class BallSprite extends Sprite implements Const {
     public int getYDir() {
         return ydir;
     }
+
 }

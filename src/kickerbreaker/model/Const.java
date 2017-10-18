@@ -17,5 +17,5 @@ public interface Const {
     int SPRITE_HEIGHT = 18;
     int BALL_WIDTH = 20;
     int BALL_HEIGHT = 21;
-    int MAX_GOALS = 3;
+    int MAX_GOALS = 2;
 }

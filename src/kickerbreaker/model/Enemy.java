@@ -23,12 +23,10 @@ public class Enemy {
         return y;
     }
     public boolean isDestroyed() {
-
         return destroyed;
     }
 
     public void setDestroyed(boolean value) {
-
         destroyed = value;
     }
 }
