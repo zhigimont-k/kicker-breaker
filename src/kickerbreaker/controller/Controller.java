@@ -12,8 +12,6 @@ import java.awt.event.KeyEvent;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static kickerbreaker.model.Const.*;
-
 /**
  * Created by karina on 04-10-2017.
  */
@@ -39,7 +37,7 @@ public class Controller {
         addEnemiesOnBoard();
         updateStat();
         timer = new Timer();
-        timer.scheduleAtFixedRate(new ScheduleTask(), DELAY, PERIOD);
+        timer.scheduleAtFixedRate(new ScheduleTask(), Const.DELAY, Const.PERIOD);
         board.addKeyListener(new TAdapter());
         board.setFocusable(true);
         board.setDoubleBuffered(true);
@@ -53,7 +51,7 @@ public class Controller {
 
     private void checkCollision() {
 
-        if (model.getEnemyGoals() == MAX_GOALS) {
+        if (model.getEnemyGoals() == Const.MAX_GOALS) {
             board.combo.setVisible(false);
             board.scoreLabel.setVisible(false);
             board.level.setVisible(false);
@@ -73,17 +71,13 @@ public class Controller {
         }
 
         if ((board.enemyGate.getRect()).intersects(board.ball.getRect()) && !model.enemyGate.isHit) {
-
             model.addPlayerGoal();
             model.enemyGate.isHit = true;
             updateStat();
-
         }
 
         if (!((board.enemyGate.getRect()).intersects(board.ball.getRect()))) {
-
             model.enemyGate.isHit = false;
-
         }
 
         for (int i = 0, j = 0; i < model.enemies.size(); i++) {
@@ -92,7 +86,7 @@ public class Controller {
                 j++;
             }
 
-            if (j == model.enemies.size() || model.getPlayerGoals() == MAX_GOALS) {
+            if (j == model.enemies.size() || model.getPlayerGoals() == Const.MAX_GOALS) {
 
                 if (model.getCurrentLevel() < model.getNumberOfLevels() - 1) {
                     model.clearEnemyList();
@@ -101,25 +95,21 @@ public class Controller {
                     model.breakCombo();
                     model.levelUp();
                     updateStat();
-
                     model.generateEnemies();
                     addEnemiesOnBoard();
                     board.player.resetState();
                     board.ball.resetState();
                 } else {
-
                     board.message = "Victory";
                     board.score = "Score: " + model.getScore();
                     updateStat();
                     stopGame();
-
                 }
 
             }
         }
 
         if ((board.ball.getRect()).intersects(board.player.getRect())) {
-
             model.breakCombo();
             updateStat();
             int playerLPos = (int) board.player.getRect().getMinX();
@@ -157,7 +147,6 @@ public class Controller {
         }
 
         for (int i = 0; i < model.enemies.size(); i++) {
-
             if ((board.ball.getRect()).intersects(board.enemies.get(i).getRect())) {
 
                 int ballLeft = (int) board.ball.getRect().getMinX();
@@ -182,13 +171,21 @@ public class Controller {
                     } else if (board.enemies.get(i).getRect().contains(pointBottom)) {
                         board.ball.setYDir(-1);
                     }
-
-                    model.enemies.get(i).setDestroyed(true);
-                    board.enemies.get(i).setVisible(false);
+                    if (!model.enemies.get(i).isHit()) {
+                        model.enemies.get(i).enemyHit();
+                        model.enemies.get(i).setHit(true);
+                    }
+                    if (model.enemies.get(i).getHP() == 0) {
+                        model.enemies.get(i).setDestroyed(true);
+                        board.enemies.get(i).setVisible(false);
+                    }
                     model.comboIncrement();
                     model.destructionScoreIncrement();
                     updateStat();
                 }
+            }
+            if (!(board.ball.getRect()).intersects(board.enemies.get(i).getRect())) {
+                model.enemies.get(i).setHit(false);
             }
         }
     }
@@ -197,7 +194,6 @@ public class Controller {
 
         @Override
         public void keyReleased(KeyEvent e) {
-
             board.player.keyReleased(e);
         }
 

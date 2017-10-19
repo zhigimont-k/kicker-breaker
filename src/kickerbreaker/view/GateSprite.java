@@ -8,7 +8,7 @@ import javax.swing.*;
 public class GateSprite extends Sprite {
     public GateSprite(int i) {
         ImageIcon ii;
-        switch(i){
+        switch (i) {
             case 0:
                 ii = new ImageIcon((getClass().getResource("img/player gate.png")));
                 break;

@@ -5,7 +5,8 @@ package kickerbreaker.model;
  */
 public class Gate {
     public Boolean isHit;
-    public Gate(){
+
+    public Gate() {
         isHit = false;
     }
 }

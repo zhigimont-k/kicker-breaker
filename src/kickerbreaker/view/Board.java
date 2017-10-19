@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Board extends JPanel implements Const {
+public class Board extends JPanel {
 
     public String score = "Score: ";
     public String message = "Game Over";

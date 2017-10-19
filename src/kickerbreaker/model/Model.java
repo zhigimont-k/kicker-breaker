@@ -18,40 +18,45 @@ public class Model {
     public Gate enemyGate;
 
 
-    public void levelUp(){
+    public void levelUp() {
         currentLevel++;
     }
 
-    public void addPlayerGoal(){
+    public void addPlayerGoal() {
         playerGoals++;
         goalScoreIncrement();
     }
 
-    public void nullifyGoals(){
+    public void nullifyGoals() {
         enemyGoals = 0;
         playerGoals = 0;
     }
 
-    public void breakCombo(){
+    public void breakCombo() {
         comboCounter = 0;
     }
 
-    public int getCombo(){
+    public int getCombo() {
         return comboCounter;
     }
 
-    public void comboIncrement(){
+    public void comboIncrement() {
         comboCounter++;
     }
-    public void addEnemyGoal(){
+
+    public void addEnemyGoal() {
         enemyGoals++;
     }
 
-    public int getEnemyGoals(){return enemyGoals;}
+    public int getEnemyGoals() {
+        return enemyGoals;
+    }
 
-    public int getPlayerGoals(){return playerGoals;}
+    public int getPlayerGoals() {
+        return playerGoals;
+    }
 
-    public Model(){
+    public Model() {
         playerGate = new Gate();
         enemyGate = new Gate();
         score = 0;
@@ -61,13 +66,13 @@ public class Model {
         comboCounter = 0;
     }
 
-    public int getCurrentLevel(){
+    public int getCurrentLevel() {
         return currentLevel;
     }
 
-    public void generateEnemies(){
+    public void generateEnemies() {
         int bound = levels.get(currentLevel).enemyList.size();
-        for (int index = 0; index < bound; index++){
+        for (int index = 0; index < bound; index++) {
             Enemy addedEnemy = new Enemy(levels.get(currentLevel).enemyList.get(index).getX(),
                     levels.get(currentLevel).enemyList.get(index).getY(),
                     levels.get(currentLevel).enemyList.get(index).getHP());
@@ -75,21 +80,23 @@ public class Model {
         }
     }
 
-    public int getNumberOfLevels(){return levels.size();}
+    public int getNumberOfLevels() {
+        return levels.size();
+    }
 
-    public int getScore(){
+    public int getScore() {
         return score;
     }
 
-    public void destructionScoreIncrement(){
-        score+=5 * comboCounter;
+    public void destructionScoreIncrement() {
+        score += 5 * comboCounter;
     }
 
-    public void goalScoreIncrement(){
-        score+=10;
+    public void goalScoreIncrement() {
+        score += 10;
     }
 
-    public void clearEnemyList(){
+    public void clearEnemyList() {
         enemies.clear();
     }
 

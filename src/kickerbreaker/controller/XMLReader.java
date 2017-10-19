@@ -93,7 +93,7 @@ public class XMLReader {
                         hp = new String(ch, start, length);
                         addedEnemy.setHP(Integer.parseInt(hp));
                         hpBoolean = false;
-                        model.levels.get(model.levels.size()-1).enemyList.add(addedEnemy);
+                        model.levels.get(model.levels.size() - 1).enemyList.add(addedEnemy);
                     }
                 }
             };

@@ -3,11 +3,12 @@ package kickerbreaker.view;
 /**
  * Created by karina on 02-10-2017.
  */
+
 import kickerbreaker.model.Const;
 
 import javax.swing.ImageIcon;
 
-public class BallSprite extends Sprite implements Const {
+public class BallSprite extends Sprite {
 
     private int xdir;
     private int ydir;
@@ -26,9 +27,13 @@ public class BallSprite extends Sprite implements Const {
         resetState();
     }
 
-    public int getX(){return x;}
+    public int getX() {
+        return x;
+    }
 
-    public int getY(){return y;}
+    public int getY() {
+        return y;
+    }
 
 
     public void move() {
@@ -55,8 +60,8 @@ public class BallSprite extends Sprite implements Const {
 
     public void resetState() {
 
-        x = INIT_BALL_X;
-        y = INIT_BALL_Y;
+        x = Const.INIT_BALL_X;
+        y = Const.INIT_BALL_Y;
     }
 
     public void setXDir(int x) {

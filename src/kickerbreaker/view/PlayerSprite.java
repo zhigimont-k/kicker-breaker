@@ -3,12 +3,13 @@ package kickerbreaker.view;
 /**
  * Created by karina on 02-10-2017.
  */
+
 import kickerbreaker.model.Const;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 
-public class PlayerSprite extends Sprite implements Const {
+public class PlayerSprite extends Sprite {
 
     private int dx;
 
@@ -64,7 +65,7 @@ public class PlayerSprite extends Sprite implements Const {
 
     public void resetState() {
 
-        x = INIT_PLAYER_X;
-        y = INIT_PLAYER_Y;
+        x = Const.INIT_PLAYER_X;
+        y = Const.INIT_PLAYER_Y;
     }
 }

@@ -2,97 +2,97 @@
 <Database>
     <Level>
         <Enemy>
-            <x>20</x>
+            <x>40</x>
             <y>60</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>20</x>
+            <x>40</x>
             <y>80</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>20</x>
+            <x>40</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>20</x>
+            <x>40</x>
             <y>120</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>80</x>
+            <x>100</x>
             <y>60</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>80</x>
+            <x>100</x>
             <y>80</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>80</x>
+            <x>100</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>80</x>
+            <x>100</x>
             <y>120</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>140</x>
+            <x>160</x>
             <y>60</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>140</x>
+            <x>160</x>
             <y>80</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>140</x>
+            <x>160</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>140</x>
+            <x>160</x>
             <y>120</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>200</x>
+            <x>220</x>
             <y>60</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>200</x>
+            <x>220</x>
             <y>80</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>200</x>
+            <x>220</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>200</x>
+            <x>220</x>
             <y>120</y>
             <hp>1</hp>
         </Enemy>
-        
+
     </Level>
     <Level>
         <Enemy>
             <x>100</x>
             <y>60</y>
-            <hp>1</hp>
+            <hp>3</hp>
         </Enemy>
         <Enemy>
             <x>100</x>
             <y>100</y>
-            <hp>1</hp>
+            <hp>3</hp>
         </Enemy>
     </Level>
 </Database>
