@@ -62,7 +62,7 @@ public class Model {
         score = 0;
         enemyGoals = 0;
         playerGoals = 0;
-        currentLevel = 0;
+        currentLevel = 1;
         comboCounter = 0;
     }
 

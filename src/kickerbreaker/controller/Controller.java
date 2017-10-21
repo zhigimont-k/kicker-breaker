@@ -178,10 +178,10 @@ public class Controller {
                     if (model.enemies.get(i).getHP() == 0) {
                         model.enemies.get(i).setDestroyed(true);
                         board.enemies.get(i).setVisible(false);
+                        model.comboIncrement();
+                        model.destructionScoreIncrement();
+                        updateStat();
                     }
-                    model.comboIncrement();
-                    model.destructionScoreIncrement();
-                    updateStat();
                 }
             }
             if (!(board.ball.getRect()).intersects(board.enemies.get(i).getRect())) {

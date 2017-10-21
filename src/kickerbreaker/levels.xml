@@ -81,18 +81,99 @@
             <y>120</y>
             <hp>1</hp>
         </Enemy>
-
     </Level>
     <Level>
+        <Enemy>
+            <x>10</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+        <Enemy>
+            <x>55</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
         <Enemy>
             <x>100</x>
             <y>60</y>
             <hp>3</hp>
         </Enemy>
         <Enemy>
+            <x>145</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+        <Enemy>
+            <x>190</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+        <Enemy>
+            <x>235</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+
+        <Enemy>
+            <x>10</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>55</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>100</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>145</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>190</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>235</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+
+        <Enemy>
+            <x>10</x>
+            <y>100</y>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
+            <x>55</x>
+            <y>100</y>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
             <x>100</x>
             <y>100</y>
-            <hp>3</hp>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
+            <x>145</x>
+            <y>100</y>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
+            <x>190</x>
+            <y>100</y>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
+            <x>235</x>
+            <y>100</y>
+            <hp>1</hp>
         </Enemy>
     </Level>
 </Database>

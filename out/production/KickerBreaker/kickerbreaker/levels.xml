@@ -2,114 +2,176 @@
 <Database>
     <Level>
         <Enemy>
-            <x>20</x>
+            <x>40</x>
             <y>60</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>20</x>
+            <x>40</x>
             <y>80</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>20</x>
+            <x>40</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>20</x>
+            <x>40</x>
             <y>120</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>80</x>
+            <x>100</x>
             <y>60</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>80</x>
+            <x>100</x>
             <y>80</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>80</x>
+            <x>100</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>80</x>
+            <x>100</x>
             <y>120</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>140</x>
+            <x>160</x>
             <y>60</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>140</x>
+            <x>160</x>
             <y>80</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>140</x>
+            <x>160</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>140</x>
+            <x>160</x>
             <y>120</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>200</x>
+            <x>220</x>
             <y>60</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>200</x>
+            <x>220</x>
             <y>80</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>200</x>
+            <x>220</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
-            <x>200</x>
-            <y>120</y>
-            <hp>1</hp>
-        </Enemy>
-        <Enemy>
-            <x>260</x>
-            <y>60</y>
-            <hp>1</hp>
-        </Enemy>
-        <Enemy>
-            <x>260</x>
-            <y>80</y>
-            <hp>1</hp>
-        </Enemy>
-        <Enemy>
-            <x>260</x>
-            <y>100</y>
-            <hp>1</hp>
-        </Enemy>
-        <Enemy>
-            <x>260</x>
+            <x>220</x>
             <y>120</y>
             <hp>1</hp>
         </Enemy>
     </Level>
     <Level>
         <Enemy>
+            <x>10</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+        <Enemy>
+            <x>55</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+        <Enemy>
             <x>100</x>
             <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+        <Enemy>
+            <x>145</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+        <Enemy>
+            <x>190</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+        <Enemy>
+            <x>235</x>
+            <y>60</y>
+            <hp>3</hp>
+        </Enemy>
+
+        <Enemy>
+            <x>10</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>55</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>100</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>145</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>190</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+        <Enemy>
+            <x>235</x>
+            <y>80</y>
+            <hp>2</hp>
+        </Enemy>
+
+        <Enemy>
+            <x>10</x>
+            <y>100</y>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
+            <x>55</x>
+            <y>100</y>
             <hp>1</hp>
         </Enemy>
         <Enemy>
             <x>100</x>
+            <y>100</y>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
+            <x>145</x>
+            <y>100</y>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
+            <x>190</x>
+            <y>100</y>
+            <hp>1</hp>
+        </Enemy>
+        <Enemy>
+            <x>235</x>
             <y>100</y>
             <hp>1</hp>
         </Enemy>

@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce6965fa-5aae-4506-9789-bb0ddb84cf8b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kickerbreaker/controller/XMLReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kickerbreaker/levels.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/kickerbreaker/model/Level.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Ball.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/kickerbreaker/view/img/brick.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/kickerbreaker/view/img/gate.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/controller/Controller$ScheduleTask.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/controller/Controller$ScheduleTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/controller/Controller$TAdapter.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/controller/Controller$TAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/controller/Controller.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/controller/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Const.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Const.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Enemy.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Enemy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Gate.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Gate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Level.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Level.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Model.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/model/Model.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/view/BallSprite.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/view/BallSprite.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/view/Board.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/view/Board.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/view/PlayerSprite.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/view/PlayerSprite.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/view/Sprite.class" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/view/Sprite.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kickerbreaker/KickerBreaker.java" afterPath="$PROJECT_DIR$/src/kickerbreaker/KickerBreaker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/levels.xml" afterPath="$PROJECT_DIR$/out/production/KickerBreaker/kickerbreaker/levels.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kickerbreaker/controller/Controller.java" afterPath="$PROJECT_DIR$/src/kickerbreaker/controller/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kickerbreaker/model/Const.java" afterPath="$PROJECT_DIR$/src/kickerbreaker/model/Const.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kickerbreaker/model/Enemy.java" afterPath="$PROJECT_DIR$/src/kickerbreaker/model/Enemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kickerbreaker/levels.xml" afterPath="$PROJECT_DIR$/src/kickerbreaker/levels.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kickerbreaker/model/Model.java" afterPath="$PROJECT_DIR$/src/kickerbreaker/model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kickerbreaker/view/Board.java" afterPath="$PROJECT_DIR$/src/kickerbreaker/view/Board.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kickerbreaker/view/Window.java" afterPath="$PROJECT_DIR$/src/kickerbreaker/view/Window.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,45 +37,9 @@
       <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-              <folding>
-                <element signature="e#377#384#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BallSprite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/BallSprite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Background.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/Background.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Level.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Level.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-              <folding>
-                <element signature="e#200#207#0" expanded="true" />
-                <element signature="e#239#240#0" expanded="true" />
-                <element signature="e#274#275#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -80,13 +47,21 @@
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="1955">
+              <caret line="119" column="22" lean-forward="false" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3704#3705#0" expanded="true" />
-                <element signature="e#3735#3736#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemySprite.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/EnemySprite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,34 +76,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Const.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Const.java">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sprite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/Sprite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KickerBreaker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/KickerBreaker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state relative-caret-position="1308">
+              <caret line="182" column="37" lean-forward="false" selection-start-line="182" selection-start-column="37" selection-end-line="182" selection-end-column="37" />
               <folding>
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
+                <element signature="e#6826#6827#0" expanded="true" />
+                <element signature="e#6877#6878#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="XMLReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/controller/XMLReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#520#527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,8 +105,38 @@
       <file leaf-file-name="levels.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kickerbreaker/levels.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="83" column="8" lean-forward="false" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+            <state relative-caret-position="85">
+              <caret line="142" column="22" lean-forward="true" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GateSprite.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/GateSprite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sprite.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/Sprite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerSprite.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/PlayerSprite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1105">
+              <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -182,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/kickerbreaker/Breakout.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/view/Background.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/view/Gate.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/view/Sprite.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/view/Player.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/view/Ball.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/view/Enemy.java" />
@@ -190,21 +187,22 @@
         <option value="$PROJECT_DIR$/src/kickerbreaker/model/PlayerInfo.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/model/EnemyInfo.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/view/EnemySprite.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/view/GateSprite.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Gate.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/view/BallSprite.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/model/Ball.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/view/PlayerSprite.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/model/levels.xml" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Enemy.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Level.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Model.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/view/Board.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/controller/XMLReader.java" />
-        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Const.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/view/Window.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/KickerBreaker.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/view/PlayerSprite.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/view/Board.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Const.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/controller/XMLReader.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Gate.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Level.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/view/BallSprite.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/view/GateSprite.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/view/Sprite.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/model/Model.java" />
+        <option value="$PROJECT_DIR$/src/kickerbreaker/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/kickerbreaker/levels.xml" />
       </list>
     </option>
@@ -236,7 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -337,6 +334,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -789,16 +787,17 @@
       <workItem from="1508266696266" duration="9066000" />
       <workItem from="1508315219327" duration="3331000" />
       <workItem from="1508325627747" duration="2239000" />
-      <workItem from="1508350536728" duration="6548000" />
+      <workItem from="1508350536728" duration="6864000" />
+      <workItem from="1508428039746" duration="3222000" />
+      <workItem from="1508489834786" duration="1325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60009000" />
+    <option name="totallyTimeSpent" value="64872000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -810,7 +809,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -850,9 +849,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +857,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6826#6827#0" expanded="true" />
+            <element signature="e#6877#6878#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -876,9 +876,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
           <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding>
-            <element signature="e#377#384#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -888,8 +886,6 @@
           <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3704#3705#0" expanded="true" />
-            <element signature="e#3735#3736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -898,7 +894,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -922,9 +924,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="31" column="9" lean-forward="false" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -932,9 +932,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +948,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="e#6826#6827#0" expanded="true" />
+            <element signature="e#6877#6878#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -968,8 +969,6 @@
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3704#3705#0" expanded="true" />
-            <element signature="e#3735#3736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -978,9 +977,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -988,9 +985,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,7 +1009,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1030,9 +1031,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="48" column="1" lean-forward="false" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,7 +1047,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="66" lean-forward="false" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1056,9 +1061,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="67" lean-forward="false" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,8 +1071,6 @@
           <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="33" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3704#3705#0" expanded="true" />
-            <element signature="e#3735#3736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1078,9 +1079,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1120,95 +1119,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/EnemySprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Player.java" />
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/GateSprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Ball.java" />
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/PlayerSprite.java">
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/KickerBreaker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        <state relative-caret-position="153">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/controller/XMLReader.java">
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Const.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1081">
-          <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#520#527#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="340">
+          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding>
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#570#571#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#324#325#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Gate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        <state relative-caret-position="170">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
-            <element signature="e#137#138#0" expanded="true" />
+            <element signature="e#139#140#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Level.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <element signature="e#200#207#0" expanded="true" />
-            <element signature="e#239#240#0" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-          <folding>
-            <element signature="e#377#384#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,21 +1190,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/BallSprite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="697">
+          <caret line="47" column="37" lean-forward="false" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="1955">
+          <caret line="119" column="22" lean-forward="false" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3704#3705#0" expanded="true" />
-            <element signature="e#3735#3736#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/EnemySprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="41" lean-forward="false" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/GateSprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/PlayerSprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,37 +1252,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/view/Sprite.java">
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/controller/XMLReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/KickerBreaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        <state relative-caret-position="124">
+          <caret line="74" column="54" lean-forward="false" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
           <folding>
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#520#527#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Const.java">
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="26" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="289">
+          <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kickerbreaker/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1308">
+          <caret line="182" column="37" lean-forward="false" selection-start-line="182" selection-start-column="37" selection-end-line="182" selection-end-column="37" />
+          <folding>
+            <element signature="e#6826#6827#0" expanded="true" />
+            <element signature="e#6877#6878#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kickerbreaker/levels.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="83" column="8" lean-forward="false" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+        <state relative-caret-position="85">
+          <caret line="142" column="22" lean-forward="true" selection-start-line="142" selection-start-column="22" selection-end-line="142" selection-end-column="22" />
           <folding />
         </state>
       </provider>
