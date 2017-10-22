@@ -40,8 +40,8 @@ public class Board extends JPanel {
 
     private void gameInit() {
         background = new Background();
-        playerGate = new GateSprite(0);
-        enemyGate = new GateSprite(1);
+        playerGate = new GateSprite("player");
+        enemyGate = new GateSprite("enemy");
         player = new PlayerSprite();
         ball = new BallSprite();
         combo = new JLabel("");

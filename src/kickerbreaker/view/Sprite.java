@@ -4,16 +4,20 @@ package kickerbreaker.view;
  * Created by karina on 02-10-2017.
  */
 
-import java.awt.Image;
-import java.awt.Rectangle;
+import javax.swing.*;
+import java.awt.*;
 
-public class Sprite {
+public class Sprite extends JPanel {
 
     protected int x;
     protected int y;
     protected int i_width;
     protected int i_height;
     protected Image image;
+
+    public void setImage(Image image){
+        this.image = image;
+    }
 
     public void setX(int x) {
         this.x = x;

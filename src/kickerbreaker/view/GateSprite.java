@@ -6,15 +6,13 @@ import javax.swing.*;
  * Created by karina on 03-10-2017.
  */
 public class GateSprite extends Sprite {
-    public GateSprite(int i) {
+    private String type;
+    public GateSprite(String type) {
         ImageIcon ii;
-        switch (i) {
-            case 0:
-                ii = new ImageIcon((getClass().getResource("img/player gate.png")));
-                break;
-            default:
-                ii = new ImageIcon((getClass().getResource("img/enemy gate.png")));
-                break;
+        if (type.toLowerCase() == "player"){
+            ii = new ImageIcon((getClass().getResource("img/player gate.png")));
+        } else {
+            ii = new ImageIcon((getClass().getResource("img/enemy gate.png")));
         }
         image = ii.getImage();
 

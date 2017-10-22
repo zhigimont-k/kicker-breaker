@@ -19,6 +19,8 @@ public class Controller {
     public Board board;
     private Model model;
     private Window window;
+    private BallController ballController;
+    private PlayerController playerController;
 
     private Timer timer;
 
@@ -36,6 +38,8 @@ public class Controller {
         model.generateEnemies();
         addEnemiesOnBoard();
         updateStat();
+        ballController = new BallController(model.ball, board.ball);
+        playerController = new PlayerController(model.player, board.player);
         timer = new Timer();
         timer.scheduleAtFixedRate(new ScheduleTask(), Const.DELAY, Const.PERIOD);
         board.addKeyListener(new TAdapter());
@@ -98,7 +102,7 @@ public class Controller {
                     model.generateEnemies();
                     addEnemiesOnBoard();
                     board.player.resetState();
-                    board.ball.resetState();
+                    ballController.sprite.resetState();
                 } else {
                     board.message = "Victory";
                     board.score = "Score: " + model.getScore();
@@ -121,28 +125,28 @@ public class Controller {
             int fourth = playerLPos + 32;
 
             if (ballLPos < first) {
-                board.ball.setXDir(-1);
-                board.ball.setYDir(-1);
+                model.ball.setXDir(-1);
+                model.ball.setYDir(-1);
             }
 
             if (ballLPos >= first && ballLPos < second) {
-                board.ball.setXDir(-1);
-                board.ball.setYDir(-1 * board.ball.getYDir());
+                model.ball.setXDir(-1);
+                model.ball.setYDir(-1 * model.ball.getYDir());
             }
 
             if (ballLPos >= second && ballLPos < third) {
-                board.ball.setXDir(0);
-                board.ball.setYDir(-1);
+                model.ball.setXDir(0);
+                model.ball.setYDir(-1);
             }
 
             if (ballLPos >= third && ballLPos < fourth) {
-                board.ball.setXDir(1);
-                board.ball.setYDir(-1 * board.ball.getYDir());
+                model.ball.setXDir(1);
+                model.ball.setYDir(-1 * model.ball.getYDir());
             }
 
             if (ballLPos > fourth) {
-                board.ball.setXDir(1);
-                board.ball.setYDir(-1);
+                model.ball.setXDir(1);
+                model.ball.setYDir(-1);
             }
         }
 
@@ -161,19 +165,20 @@ public class Controller {
 
                 if (!model.enemies.get(i).isDestroyed()) {
                     if (board.enemies.get(i).getRect().contains(pointRight)) {
-                        board.ball.setXDir(-1);
+                        model.ball.setXDir(-1);
                     } else if (board.enemies.get(i).getRect().contains(pointLeft)) {
-                        board.ball.setXDir(1);
+                        model.ball.setXDir(1);
                     }
 
                     if (board.enemies.get(i).getRect().contains(pointTop)) {
-                        board.ball.setYDir(1);
+                        model.ball.setYDir(1);
                     } else if (board.enemies.get(i).getRect().contains(pointBottom)) {
-                        board.ball.setYDir(-1);
+                        model.ball.setYDir(-1);
                     }
                     if (!model.enemies.get(i).isHit()) {
                         model.enemies.get(i).enemyHit();
                         model.enemies.get(i).setHit(true);
+                        board.enemies.get(i).setSprite(model.enemies.get(i).getHP());
                     }
                     if (model.enemies.get(i).getHP() == 0) {
                         model.enemies.get(i).setDestroyed(true);
@@ -194,12 +199,12 @@ public class Controller {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            board.player.keyReleased(e);
+            playerController.keyReleased(e);
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-            board.player.keyPressed(e);
+            playerController.keyPressed(e);
         }
     }
 
@@ -208,8 +213,10 @@ public class Controller {
         @Override
         public void run() {
 
-            board.player.move();
-            board.ball.move();
+            playerController.move();
+            board.player.repaint();
+            ballController.move();
+            board.ball.repaint();
             checkCollision();
             board.repaint();
         }
@@ -218,13 +225,15 @@ public class Controller {
 
     public void addEnemiesOnBoard() {
         for (int index = 0; index < model.enemies.size(); index++) {
-            board.enemies.add(new EnemySprite(model.enemies.get(index).getX(), model.enemies.get(index).getY()));
+            board.enemies.add(new EnemySprite(model.enemies.get(index).getX(), model.enemies.get(index).getY(),
+                    model.enemies.get(index).getHP()));
         }
     }
 
     public void updateStat() {
         board.combo.setText("x" + model.getCombo());
-        board.level.setText("Level " + model.getCurrentLevel());
+        int level = model.getCurrentLevel()+1;
+        board.level.setText("Level " + level);
         board.goals.setText(model.getPlayerGoals() + " : " + model.getEnemyGoals());
         board.scoreLabel.setText("Score: " + model.getScore());
     }

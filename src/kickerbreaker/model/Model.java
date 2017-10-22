@@ -16,6 +16,8 @@ public class Model {
     public ArrayList<Level> levels = new ArrayList<Level>();
     public Gate playerGate;
     public Gate enemyGate;
+    public Ball ball;
+    public Player player;
 
 
     public void levelUp() {
@@ -59,10 +61,12 @@ public class Model {
     public Model() {
         playerGate = new Gate();
         enemyGate = new Gate();
+        ball = new Ball();
+        player = new Player();
         score = 0;
         enemyGoals = 0;
         playerGoals = 0;
-        currentLevel = 1;
+        currentLevel = 0;
         comboCounter = 0;
     }
 

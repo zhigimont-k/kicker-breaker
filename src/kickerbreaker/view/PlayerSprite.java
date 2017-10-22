@@ -7,11 +7,9 @@ package kickerbreaker.view;
 import kickerbreaker.model.Const;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
 
 public class PlayerSprite extends Sprite {
 
-    private int dx;
 
     public PlayerSprite() {
 
@@ -22,45 +20,6 @@ public class PlayerSprite extends Sprite {
         i_height = image.getHeight(null);
 
         resetState();
-    }
-
-    public void move() {
-
-        x += dx;
-
-        if (x <= 0) {
-            x = 0;
-        }
-
-        if (x >= Const.WIDTH - Const.SPRITE_WIDTH) {
-            x = Const.WIDTH - Const.SPRITE_WIDTH;
-        }
-    }
-
-    public void keyPressed(KeyEvent e) {
-
-        int key = e.getKeyCode();
-
-        if (key == KeyEvent.VK_LEFT) {
-            dx = -1;
-        }
-
-        if (key == KeyEvent.VK_RIGHT) {
-            dx = 1;
-        }
-    }
-
-    public void keyReleased(KeyEvent e) {
-
-        int key = e.getKeyCode();
-
-        if (key == KeyEvent.VK_LEFT) {
-            dx = 0;
-        }
-
-        if (key == KeyEvent.VK_RIGHT) {
-            dx = 0;
-        }
     }
 
     public void resetState() {
