@@ -14,17 +14,13 @@ import org.xml.sax.helpers.DefaultHandler;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
-import java.util.ArrayList;
 
+//JAXB/XMLStreams
 public class XMLReader {
-    File fileToOpen;
-    public ArrayList<Level> addedLevels = new ArrayList<Level>();
-    Enemy addedEnemy;
-    Model model;
+    private Enemy addedEnemy;
 
     public XMLReader(Model model) {
-        this.model = model;
-        fileToOpen = new File("src/kickerbreaker/levels.xml");
+        File fileToOpen = new File("src/kickerbreaker/levels.xml");
         try {
 
             SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -32,7 +28,6 @@ public class XMLReader {
 
             DefaultHandler handler = new DefaultHandler() {
 
-                boolean levelEndBoolean = false;
                 boolean levelBoolean = false;
                 boolean xBoolean = false;
                 boolean yBoolean = false;
@@ -44,10 +39,6 @@ public class XMLReader {
 
                     if (qName.equalsIgnoreCase("level")) {
                         levelBoolean = true;
-                    }
-
-                    if (qName.equalsIgnoreCase("/level")) {
-                        levelEndBoolean = true;
                     }
 
                     if (qName.equalsIgnoreCase("x")) {

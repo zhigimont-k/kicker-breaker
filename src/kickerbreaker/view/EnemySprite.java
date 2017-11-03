@@ -15,15 +15,7 @@ public class EnemySprite extends Sprite {
         this.x = x;
         this.y = y;
 
-        if (hp == 1){
-            ii = new ImageIcon((getClass().getResource("img/enemy.png")));
-        }
-        if (hp == 2){
-            ii = new ImageIcon((getClass().getResource("img/enemy2.png")));
-        }
-        if (hp >= 3){
-            ii = new ImageIcon((getClass().getResource("img/enemy3.png")));
-        }
+        setSprite(hp);
         image = ii.getImage();
 
         i_width = image.getWidth(null);

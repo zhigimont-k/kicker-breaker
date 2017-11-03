@@ -306,17 +306,17 @@
         <Enemy>
             <x>130</x>
             <y>130</y>
-            <hp>2</hp>
+            <hp>3</hp>
         </Enemy>
         <Enemy>
             <x>130</x>
             <y>30</y>
-            <hp>2</hp>
+            <hp>3</hp>
         </Enemy>
         <Enemy>
             <x>130</x>
             <y>230</y>
-            <hp>2</hp>
+            <hp>3</hp>
         </Enemy>
     </Level>
 </Database>

@@ -9,6 +9,15 @@ import java.awt.*;
 
 public class Sprite extends JPanel {
 
+
+    public static final int SPRITE_WIDTH = 41;
+    public static final int BALL_WIDTH = 20;
+    public static final int BALL_HEIGHT = 21;
+    public static final int INIT_PLAYER_X = 200;
+    public static final int INIT_PLAYER_Y = 420;
+    public static final int INIT_BALL_X = 230;
+    public static final int INIT_BALL_Y = 355;
+
     protected int x;
     protected int y;
     protected int i_width;

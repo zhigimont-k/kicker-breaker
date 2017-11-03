@@ -1,8 +1,7 @@
 package kickerbreaker.controller;
 
 import kickerbreaker.model.Ball;
-import kickerbreaker.model.Const;
-import kickerbreaker.view.BallSprite;
+import kickerbreaker.view.*;
 
 /**
  * Created by karina on 22-10-2017.
@@ -25,7 +24,7 @@ public class BallController {
             model.setXDir(1);
         }
 
-        if (sprite.getX() >= Const.WIDTH - Const.BALL_WIDTH) {
+        if (sprite.getX() >= GamePanel.WIDTH - Sprite.BALL_WIDTH) {
             model.setXDir(-1);
         }
 
@@ -33,7 +32,7 @@ public class BallController {
             model.setYDir(1);
         }
 
-        if (sprite.getY() >= Const.HEIGHT - Const.BALL_HEIGHT) {
+        if (sprite.getY() >= GamePanel.HEIGHT - Sprite.BALL_HEIGHT) {
             model.setYDir(-1);
         }
     }

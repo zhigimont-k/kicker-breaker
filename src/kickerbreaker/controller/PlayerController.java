@@ -1,8 +1,7 @@
 package kickerbreaker.controller;
 
-import kickerbreaker.model.Const;
 import kickerbreaker.model.Player;
-import kickerbreaker.view.PlayerSprite;
+import kickerbreaker.view.*;
 
 import java.awt.event.KeyEvent;
 
@@ -26,8 +25,8 @@ public class PlayerController {
             sprite.setX(0);
         }
 
-        if (sprite.getX() >= Const.WIDTH - Const.SPRITE_WIDTH) {
-            sprite.setX(Const.WIDTH - Const.SPRITE_WIDTH);
+        if (sprite.getX() >= GamePanel.WIDTH - Sprite.SPRITE_WIDTH) {
+            sprite.setX(GamePanel.WIDTH - Sprite.SPRITE_WIDTH);
         }
     }
 

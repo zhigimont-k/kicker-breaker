@@ -1,9 +1,9 @@
 package kickerbreaker.controller;
 
-import kickerbreaker.model.Const;
+import kickerbreaker.model.Enemy;
 import kickerbreaker.model.Model;
-import kickerbreaker.view.Board;
 import kickerbreaker.view.EnemySprite;
+import kickerbreaker.view.GamePanel;
 import kickerbreaker.view.Window;
 
 import java.awt.*;
@@ -16,7 +16,12 @@ import java.util.TimerTask;
  * Created by karina on 04-10-2017.
  */
 public class Controller {
-    public Board board;
+
+    public static final int DELAY = 1000;
+    public static final int PERIOD = 10;
+    public static final int MAX_GOALS = 5;
+
+    private GamePanel gamePanel;
     private Model model;
     private Window window;
     private BallController ballController;
@@ -27,85 +32,85 @@ public class Controller {
     public Controller() {
         this.model = new Model();
         this.window = new Window();
-        this.board = new Board();
+        this.gamePanel = new GamePanel();
         XMLReader reader = new XMLReader(model);
-        window.add(board);
-        board.setPreferredSize(new Dimension(Const.WIDTH, Const.HEIGHT));
-        window.setContentPane(board);
+        window.add(gamePanel);
+        gamePanel.setPreferredSize(new Dimension(gamePanel.WIDTH, gamePanel.HEIGHT));
+        window.setContentPane(gamePanel);
         window.pack();
         window.setResizable(false);
         window.setLocationRelativeTo(null);
-        model.generateEnemies();
+        model.generateCurrentLevel();
         addEnemiesOnBoard();
         updateStat();
-        ballController = new BallController(model.ball, board.ball);
-        playerController = new PlayerController(model.player, board.player);
+        ballController = new BallController(model.ball, gamePanel.ball);
+        playerController = new PlayerController(model.player, gamePanel.player);
         timer = new Timer();
-        timer.scheduleAtFixedRate(new ScheduleTask(), Const.DELAY, Const.PERIOD);
-        board.addKeyListener(new TAdapter());
-        board.setFocusable(true);
-        board.setDoubleBuffered(true);
+        timer.scheduleAtFixedRate(new ScheduleTask(), DELAY, PERIOD);
+        gamePanel.addKeyListener(new TAdapter());
+        gamePanel.setFocusable(true);
+        gamePanel.setDoubleBuffered(true);
     }
 
     private void stopGame() {
 
-        board.ingame = false;
+        gamePanel.ingame = false;
         timer.cancel();
     }
 
     private void checkCollision() {
 
-        if (model.getEnemyGoals() == Const.MAX_GOALS) {
-            board.combo.setVisible(false);
-            board.scoreLabel.setVisible(false);
-            board.level.setVisible(false);
-            board.goals.setVisible(false);
-            board.score = "Score: " + model.getScore();
+        if (model.getEnemyGoals() == MAX_GOALS) {
+            gamePanel.combo.setVisible(false);
+            gamePanel.scoreLabel.setVisible(false);
+            gamePanel.level.setVisible(false);
+            gamePanel.goals.setVisible(false);
+            gamePanel.score = "Score: " + model.getScore();
             stopGame();
         }
 
-        if ((board.playerGate.getRect()).intersects(board.ball.getRect()) && !model.playerGate.isHit) {
+        if ((gamePanel.playerGate.getRect()).intersects(gamePanel.ball.getRect()) && !model.playerGate.isHit) {
             model.addEnemyGoal();
             model.playerGate.isHit = true;
             updateStat();
         }
 
-        if (!((board.playerGate.getRect()).intersects(board.ball.getRect()))) {
+        if (!((gamePanel.playerGate.getRect()).intersects(gamePanel.ball.getRect()))) {
             model.playerGate.isHit = false;
         }
 
-        if ((board.enemyGate.getRect()).intersects(board.ball.getRect()) && !model.enemyGate.isHit) {
+        if ((gamePanel.enemyGate.getRect()).intersects(gamePanel.ball.getRect()) && !model.enemyGate.isHit) {
             model.addPlayerGoal();
             model.enemyGate.isHit = true;
             updateStat();
         }
 
-        if (!((board.enemyGate.getRect()).intersects(board.ball.getRect()))) {
+        if (!((gamePanel.enemyGate.getRect()).intersects(gamePanel.ball.getRect()))) {
             model.enemyGate.isHit = false;
         }
 
-        for (int i = 0, j = 0; i < model.enemies.size(); i++) {
+        for (int i = 0, j = 0; i < model.getCurrentLevel().enemyList.size(); i++) {
 
-            if (model.enemies.get(i).isDestroyed()) {
+            if (model.getCurrentLevel().enemyList.get(i).isDestroyed()) {
                 j++;
             }
 
-            if (j == model.enemies.size() || model.getPlayerGoals() == Const.MAX_GOALS) {
+            if (j == model.getCurrentLevel().enemyList.size() || model.getPlayerGoals() == MAX_GOALS) {
 
-                if (model.getCurrentLevel() < model.getNumberOfLevels() - 1) {
-                    model.clearEnemyList();
-                    board.clearEnemyList();
+                if (model.getCurrentLevelNumber() < model.getNumberOfLevels() - 1) {
+                    model.getCurrentLevel().clearEnemyList();
+                    gamePanel.clearEnemyList();
                     model.nullifyGoals();
                     model.breakCombo();
                     model.levelUp();
                     updateStat();
-                    model.generateEnemies();
+                    model.generateCurrentLevel();
                     addEnemiesOnBoard();
-                    board.player.resetState();
+                    gamePanel.player.resetState();
                     ballController.sprite.resetState();
                 } else {
-                    board.message = "Victory";
-                    board.score = "Score: " + model.getScore();
+                    gamePanel.message = "Victory";
+                    gamePanel.score = "Score: " + model.getScore();
                     updateStat();
                     stopGame();
                 }
@@ -113,11 +118,11 @@ public class Controller {
             }
         }
 
-        if ((board.ball.getRect()).intersects(board.player.getRect())) {
+        if ((gamePanel.ball.getRect()).intersects(gamePanel.player.getRect())) {
             model.breakCombo();
             updateStat();
-            int playerLPos = (int) board.player.getRect().getMinX();
-            int ballLPos = (int) board.ball.getRect().getMinX();
+            int playerLPos = (int) gamePanel.player.getRect().getMinX();
+            int ballLPos = (int) gamePanel.ball.getRect().getMinX();
 
             int first = playerLPos + 8;
             int second = playerLPos + 16;
@@ -150,47 +155,47 @@ public class Controller {
             }
         }
 
-        for (int i = 0; i < model.enemies.size(); i++) {
-            if ((board.ball.getRect()).intersects(board.enemies.get(i).getRect())) {
+        for (int i = 0; i < model.getCurrentLevel().enemyList.size(); i++) {
+            if ((gamePanel.ball.getRect()).intersects(gamePanel.enemies.get(i).getRect())) {
 
-                int ballLeft = (int) board.ball.getRect().getMinX();
-                int ballHeight = (int) board.ball.getRect().getHeight();
-                int ballWidth = (int) board.ball.getRect().getWidth();
-                int ballTop = (int) board.ball.getRect().getMinY();
+                int ballLeft = (int) gamePanel.ball.getRect().getMinX();
+                int ballHeight = (int) gamePanel.ball.getRect().getHeight();
+                int ballWidth = (int) gamePanel.ball.getRect().getWidth();
+                int ballTop = (int) gamePanel.ball.getRect().getMinY();
 
                 Point pointRight = new Point(ballLeft + ballWidth + 1, ballTop);
                 Point pointLeft = new Point(ballLeft - 1, ballTop);
                 Point pointTop = new Point(ballLeft, ballTop - 1);
                 Point pointBottom = new Point(ballLeft, ballTop + ballHeight + 1);
 
-                if (!model.enemies.get(i).isDestroyed()) {
-                    if (board.enemies.get(i).getRect().contains(pointRight)) {
+                if (!model.getCurrentLevel().enemyList.get(i).isDestroyed()) {
+                    if (gamePanel.enemies.get(i).getRect().contains(pointRight)) {
                         model.ball.setXDir(-1);
-                    } else if (board.enemies.get(i).getRect().contains(pointLeft)) {
+                    } else if (gamePanel.enemies.get(i).getRect().contains(pointLeft)) {
                         model.ball.setXDir(1);
                     }
 
-                    if (board.enemies.get(i).getRect().contains(pointTop)) {
+                    if (gamePanel.enemies.get(i).getRect().contains(pointTop)) {
                         model.ball.setYDir(1);
-                    } else if (board.enemies.get(i).getRect().contains(pointBottom)) {
+                    } else if (gamePanel.enemies.get(i).getRect().contains(pointBottom)) {
                         model.ball.setYDir(-1);
                     }
-                    if (!model.enemies.get(i).isHit()) {
-                        model.enemies.get(i).enemyHit();
-                        model.enemies.get(i).setHit(true);
-                        board.enemies.get(i).setSprite(model.enemies.get(i).getHP());
+                    if (!model.getCurrentLevel().enemyList.get(i).isHit()) {
+                        model.getCurrentLevel().enemyList.get(i).enemyHit();
+                        model.getCurrentLevel().enemyList.get(i).setHit(true);
+                        gamePanel.enemies.get(i).setSprite( model.getCurrentLevel().enemyList.get(i).getHP());
                     }
-                    if (model.enemies.get(i).getHP() == 0) {
-                        model.enemies.get(i).setDestroyed(true);
-                        board.enemies.get(i).setVisible(false);
+                    if ( model.getCurrentLevel().enemyList.get(i).getHP() == 0) {
+                        model.getCurrentLevel().enemyList.get(i).setDestroyed(true);
+                        gamePanel.enemies.get(i).setVisible(false);
                         model.comboIncrement();
                         model.destructionScoreIncrement();
                         updateStat();
                     }
                 }
             }
-            if (!(board.ball.getRect()).intersects(board.enemies.get(i).getRect())) {
-                model.enemies.get(i).setHit(false);
+            if (!(gamePanel.ball.getRect()).intersects(gamePanel.enemies.get(i).getRect())) {
+                model.getCurrentLevel().enemyList.get(i).setHit(false);
             }
         }
     }
@@ -212,31 +217,31 @@ public class Controller {
 
         @Override
         public void run() {
-
             playerController.move();
-            board.player.repaint();
+            gamePanel.player.repaint();
             ballController.move();
-            board.ball.repaint();
+            gamePanel.ball.repaint();
             checkCollision();
-            board.repaint();
+            gamePanel.repaint();
         }
 
     }
 
     public void addEnemiesOnBoard() {
-        for (int index = 0; index < model.enemies.size(); index++) {
-            board.enemies.add(new EnemySprite(model.enemies.get(index).getX(), model.enemies.get(index).getY(),
-                    model.enemies.get(index).getHP()));
+        for (Enemy enemy : model.getCurrentLevel().enemyList) {
+            gamePanel.enemies.add(new EnemySprite(enemy.getX(), enemy.getY(), enemy.getHP()));
         }
     }
 
     public void updateStat() {
-        board.combo.setText("x" + model.getCombo());
-        int level = model.getCurrentLevel()+1;
-        board.level.setText("Level " + level);
-        board.goals.setText(model.getPlayerGoals() + " : " + model.getEnemyGoals());
-        board.scoreLabel.setText("Score: " + model.getScore());
+        gamePanel.combo.setText("x" + model.getCombo());
+        int level = model.getCurrentLevelNumber()+1;
+        gamePanel.level.setText("Level " + level);
+        gamePanel.goals.setText(model.getPlayerGoals() + " : " + model.getEnemyGoals());
+        gamePanel.scoreLabel.setText("Score: " + model.getScore());
     }
+
+
 
 
 }

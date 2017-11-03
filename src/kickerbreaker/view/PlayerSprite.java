@@ -4,8 +4,6 @@ package kickerbreaker.view;
  * Created by karina on 02-10-2017.
  */
 
-import kickerbreaker.model.Const;
-
 import javax.swing.*;
 
 public class PlayerSprite extends Sprite {
@@ -24,7 +22,7 @@ public class PlayerSprite extends Sprite {
 
     public void resetState() {
 
-        x = Const.INIT_PLAYER_X;
-        y = Const.INIT_PLAYER_Y;
+        x = INIT_PLAYER_X;
+        y = INIT_PLAYER_Y;
     }
 }

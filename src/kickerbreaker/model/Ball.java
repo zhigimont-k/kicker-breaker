@@ -14,8 +14,6 @@ public class Ball {
         ydir = -1;
     }
 
-
-
     public void setXDir(int x) {
         xdir = x;
     }

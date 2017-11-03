@@ -1,6 +1,7 @@
 package kickerbreaker.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by karina on 01-10-2017.
@@ -10,19 +11,16 @@ public class Model {
     private int score;
     private int playerGoals;
     private int enemyGoals;
-    private int currentLevel;
+    private int levelCounter;
+    private Level currentLevel = new Level();
+    private int currentLevelNumber;
     private int comboCounter;
-    public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
-    public ArrayList<Level> levels = new ArrayList<Level>();
+    public List<Enemy> enemies = new ArrayList<Enemy>();
+    public List<Level> levels = new ArrayList<Level>();
     public Gate playerGate;
     public Gate enemyGate;
     public Ball ball;
     public Player player;
-
-
-    public void levelUp() {
-        currentLevel++;
-    }
 
     public void addPlayerGoal() {
         playerGoals++;
@@ -66,22 +64,24 @@ public class Model {
         score = 0;
         enemyGoals = 0;
         playerGoals = 0;
-        currentLevel = 0;
+        levelCounter = 0;
+        currentLevelNumber = 0;
+        //currentLevel = levels.get(levelCounter);
         comboCounter = 0;
     }
 
-    public int getCurrentLevel() {
-        return currentLevel;
+    public int getCurrentLevelNumber(){return currentLevel.getNumber();}
+
+    public Level getCurrentLevel(){return currentLevel;}
+
+    public void levelUp() {
+        currentLevelNumber++;
+        //levelCounter++;
+        currentLevel.generateLevel(levels, currentLevelNumber);
     }
 
-    public void generateEnemies() {
-        int bound = levels.get(currentLevel).enemyList.size();
-        for (int index = 0; index < bound; index++) {
-            Enemy addedEnemy = new Enemy(levels.get(currentLevel).enemyList.get(index).getX(),
-                    levels.get(currentLevel).enemyList.get(index).getY(),
-                    levels.get(currentLevel).enemyList.get(index).getHP());
-            enemies.add(addedEnemy);
-        }
+    public void generateCurrentLevel(){
+        currentLevel.generateLevel(levels, currentLevelNumber);
     }
 
     public int getNumberOfLevels() {
@@ -100,8 +100,5 @@ public class Model {
         score += 10;
     }
 
-    public void clearEnemyList() {
-        enemies.clear();
-    }
 
 }
